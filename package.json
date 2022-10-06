@@ -1,0 +1,15 @@
+{
+  "name": "tsuquil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tq:dev": "concurrently \"cd client && pnpm dev\" \"cd server && pnpm dev\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
