@@ -40,7 +40,7 @@ const color = gradient(['#53e0db', '#6aed80']);
     }
   });
 
-  app.listen(process.env.PORT ?? 9000, () => console.log(`server listening on port ${color(process.env.PORT ?? '9000')}`));
+  app.listen(process.env.PORT ?? 9000, () => console.log(`🌊🍃 server listening on port ${color(process.env.PORT ?? '9000')}`));
 })()
   .catch(err => console.log(err))
   .finally(async () => await prisma.$disconnect());
