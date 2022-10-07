@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.scss';
 const Home: NextPage = () => {
   return (
     <div>
-      <h1 className={`tw-text-[200px] ${styles.tsuquil}`}>home</h1>
+      <h1 className={`tw-text-[200px] ${styles.tsuquil}`}>staging</h1>
     </div>
   );
 };
