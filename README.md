@@ -2,6 +2,9 @@
   <a href="https://tsuquil.cloud/">
     <img src="./assets/logo-round-text.svg" height="100">
   </a>
+</div>
+---
+<div align="center">
   <h3>
     made with
   </h3>
