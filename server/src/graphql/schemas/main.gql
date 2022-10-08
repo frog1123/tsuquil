@@ -1,6 +1,6 @@
 type Query {
   hello: String!
-  posts: [Post]!
+  posts(newest: Boolean!): [Post]!
 }
 
 type Mutation {

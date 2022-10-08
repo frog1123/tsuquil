@@ -18,6 +18,9 @@ export const CreatePost: FC = () => {
 
   const submitPost = () => {
     if (getPostInput().title.length !== 0) {
+      if (getPostInput().title.length >= 100) return;
+      if (getPostInput().content.length >= 500) return;
+
       _submitPost({ variables: { title: getPostInput()?.title, content: getPostInput()?.content } });
 
       if (typeof window !== 'undefined') {
