@@ -10,7 +10,7 @@ const Document: NextPage = () => {
       <Head>
         <link rel='icon' type='image' href='logo-round.min.svg' />
       </Head>
-      <body dir='ltr' className='dark:tw-bg-vapor-100'>
+      <body dir='ltr' className='dark:tw-bg-vapor-300'>
         <Main />
         <NextScript />
       </body>
