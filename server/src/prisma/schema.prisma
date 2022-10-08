@@ -10,13 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Hello {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  content   String
-}
-
 model Post {
   id        String    @id @default(auto()) @map("_id") @db.ObjectId
   createdAt DateTime  @default(now())
@@ -51,7 +44,7 @@ model User {
   tag       Int
   comments  Comment[]
   updoots   Updoot[]
-  Post      Post[]
+  posts     Post[]
 }
 
 model Updoot {

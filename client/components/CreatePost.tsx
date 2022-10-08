@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { FC, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import createPostMutation from '@graphql/mutations/createPost';
 import { useMutation } from '@apollo/client';
@@ -15,15 +15,36 @@ export const CreatePost: FC = () => {
   };
 
   const [_submitPost, { loading }] = useMutation(createPostMutation);
+  const [canSubmit, setCanSubmit] = useState(false);
+
+  const _setCanSubmit = async () => {
+    await new Promise(r => setTimeout(r, 100));
+
+    if (getPostInput().title.length === 0) {
+      setCanSubmit(false);
+      console.log(getPostInput().title.length, canSubmit);
+      return;
+    }
+    if (getPostInput().title.length >= 100) {
+      setCanSubmit(false);
+      return;
+    }
+    if (getPostInput().content.length >= 500) {
+      setCanSubmit(false);
+      return;
+    }
+
+    setCanSubmit(true);
+  };
 
   const submitPost = () => {
-    if (getPostInput().title.length !== 0) {
-      _submitPost({ variables: { title: getPostInput()?.title, content: getPostInput()?.content } });
+    if (!canSubmit) return;
 
-      if (typeof window !== 'undefined') {
-        (document.getElementById('title') as HTMLInputElement).value = '';
-        (document.getElementById('content') as HTMLInputElement).value = '';
-      }
+    _submitPost({ variables: { title: getPostInput()?.title, content: getPostInput()?.content } });
+
+    if (typeof window !== 'undefined') {
+      (document.getElementById('title') as HTMLInputElement).value = '';
+      (document.getElementById('content') as HTMLInputElement).value = '';
     }
   };
 
@@ -34,16 +55,18 @@ export const CreatePost: FC = () => {
         <TextareaAutosize
           id='title'
           placeholder='title · required · under 100 chars'
+          onKeyDown={() => _setCanSubmit()}
           className='tw-bg-vapor-100 tw-rounded-[6px] tw-py-[2px] tw-pl-[4px] tw-pr-[2px] tw-outline-none tw-overflow-x-hidden tw-text-white tw-resize-none'
         />
         <TextareaAutosize
           id='content'
           placeholder='content · under 500 chars'
+          onChange={() => _setCanSubmit()}
           minRows={3}
           className='tw-bg-vapor-100 tw-rounded-[6px] tw-py-[2px] tw-pl-[4px] tw-pr-[2px] tw-outline-none tw-overflow-x-hidden tw-text-white tw-resize-none'
         />
         <div className='tw-flex tw-w-[100%]'>
-          <AccentedButton text='submit' onClick={() => submitPost()} color='green' loading={loading} className='tw-w-[100px] tw-h-[30px] tw-ml-auto' />
+          <AccentedButton text='submit' disabled={!canSubmit} onClick={() => submitPost()} color='green' loading={loading} className='tw-w-[100px] tw-h-[30px] tw-ml-auto' />
         </div>
       </div>
     </div>

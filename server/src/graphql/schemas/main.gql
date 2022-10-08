@@ -1,11 +1,11 @@
 type Query {
-  hello: String!
-  posts: [Post]!
+  posts(newest: Boolean!): [Post]!
+  user(id: ID!): User!
 }
 
 type Mutation {
-  addHello(content: String!): String!
   createPost(title: String!, content: String): String!
+  registerUser(username: String!): String!
 }
 
 type Post {
@@ -14,4 +14,12 @@ type Post {
   updatedAt: String!
   title: String!
   content: String
+  author: User!
+}
+
+type User {
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  username: String!
 }
