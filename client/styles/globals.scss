@@ -70,14 +70,14 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f0f0e;
+  background: #090d10;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background: linear-gradient(to top, #d9ed92 0%, #b5e48c 100%);
-  background: -webkit-linear-gradient(to top, #d9ed92 0%, #b5e48c 100%);
-  background: -moz-linear-gradient(to top, #d9ed92 0%, #b5e48c 100%);
+  background: linear-gradient(to top, #6aed80 0%, #3878d8 100%);
+  background: -webkit-linear-gradient(to top, #6aed80 0%, #3878d8 100%);
+  background: -moz-linear-gradient(to top, #6aed80 0%, #3878d8 100%);
 }
 
 ::selection {

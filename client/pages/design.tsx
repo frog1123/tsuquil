@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         </div>
         <h1 className='tw-text-[100px] dark:tw-text-white'>design</h1>
       </div>
-      <div className='tw-w-[90%] tw-grid tw-grid-flow-row xl:tw-grid-cols-3 tw-gap-[100px]'>
+      <div className='tw-w-[90%] tw-grid tw-grid-flow-row xl:tw-grid-flow-col tw-gap-[100px]'>
         <div>
           <h2 className='tw-text-white tw-m-auto tw-w-[max-content] gradient-text'>text</h2>
           <Line className='tw-mb-[10px]' />
@@ -43,33 +43,35 @@ const Home: NextPage = () => {
         <div>
           <h2 className='tw-text-white tw-m-auto tw-w-[max-content] gradient-text'>buttons</h2>
           <Line className='tw-mb-[20px]' />
-          <div className='tw-grid tw-grid-cols-2 '>
-            <div className='tw-grid tw-grid-flow-row tw-gap-[20px] tw-px-[10px]'>
-              <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
-                <p className='tw-text-gray tw-ml-[6px]'>green · #5ee6ae</p>
-                <AccentedButton color='green' loading={false} text='button' onClick={() => alert('hello')} className='tw-w-[120px] tw-h-[40px]' />
+          <div className='tw-w-[max-content] tw-m-auto'>
+            <div className='tw-grid tw-grid-cols-[max-content_max-content] w-[max-content]'>
+              <div className='tw-grid tw-grid-flow-row tw-gap-[20px] tw-px-[10px]'>
+                <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
+                  <p className='tw-text-gray tw-ml-[6px]'>green · #5ee6ae</p>
+                  <AccentedButton color='green' loading={false} text='button' onClick={() => alert('hello')} className='tw-w-[120px] tw-h-[40px]' />
+                </div>
+                <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
+                  <p className='tw-text-gray tw-ml-[6px]'>disabled</p>
+                  <AccentedButton color='green' loading={false} disabled text='button' onClick={() => {}} className='tw-w-[120px] tw-h-[40px] tw-bg-accentdark' />
+                </div>
+                <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
+                  <p className='tw-text-gray tw-ml-[6px]'>loading</p>
+                  <AccentedButton color='green' loading={true} text='button' onClick={() => {}} className='tw-w-[120px] tw-h-[40px] tw-bg-accentdark' />
+                </div>
               </div>
-              <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
-                <p className='tw-text-gray tw-ml-[6px]'>disabled</p>
-                <AccentedButton color='green' loading={false} disabled text='button' onClick={() => {}} className='tw-w-[120px] tw-h-[40px] tw-bg-accentdark' />
-              </div>
-              <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
-                <p className='tw-text-gray tw-ml-[6px]'>loading</p>
-                <AccentedButton color='green' loading={true} text='button' onClick={() => {}} className='tw-w-[120px] tw-h-[40px] tw-bg-accentdark' />
-              </div>
-            </div>
-            <div className='tw-grid tw-grid-flow-row tw-gap-[20px] tw-px-[10px]'>
-              <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
-                <p className='tw-text-gray tw-ml-[6px]'>blue · #53e0db</p>
-                <AccentedButton color='blue' loading={false} text='button' onClick={() => alert('hello')} className='tw-w-[120px] tw-h-[40px]' />
-              </div>
-              <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
-                <p className='tw-text-gray tw-ml-[6px]'>disabled</p>
-                <AccentedButton color='blue' loading={false} disabled text='button' onClick={() => {}} className='tw-w-[120px] tw-h-[40px] tw-bg-accentdark' />
-              </div>
-              <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
-                <p className='tw-text-gray tw-ml-[6px]'>loading</p>
-                <AccentedButton color='blue' loading={true} text='button' onClick={() => {}} className='tw-w-[120px] tw-h-[40px] tw-bg-accentdark' />
+              <div className='tw-grid tw-grid-flow-row tw-gap-[20px] tw-px-[10px]'>
+                <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
+                  <p className='tw-text-gray tw-ml-[6px]'>blue · #53e0db</p>
+                  <AccentedButton color='blue' loading={false} text='button' onClick={() => alert('hello')} className='tw-w-[120px] tw-h-[40px]' />
+                </div>
+                <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
+                  <p className='tw-text-gray tw-ml-[6px]'>disabled</p>
+                  <AccentedButton color='blue' loading={false} disabled text='button' onClick={() => {}} className='tw-w-[120px] tw-h-[40px] tw-bg-accentdark' />
+                </div>
+                <div className='tw-grid tw-grid-flow-row tw-gap-[4px]'>
+                  <p className='tw-text-gray tw-ml-[6px]'>loading</p>
+                  <AccentedButton color='blue' loading={true} text='button' onClick={() => {}} className='tw-w-[120px] tw-h-[40px] tw-bg-accentdark' />
+                </div>
               </div>
             </div>
           </div>
@@ -77,7 +79,7 @@ const Home: NextPage = () => {
         <div>
           <h2 className='tw-text-white tw-m-auto tw-w-[max-content] gradient-text'>colors</h2>
           <Line className='tw-mb-[20px]' />
-          <div className='tw-grid tw-grid-cols-2 tw-gap-[20px]'>
+          <div className='tw-grid tw-grid-cols-2 tw-gap-[20px] tw-mx-[10px]'>
             <div className='tw-grid tw-grid-flow-col tw-w-[max-content] tw-gap-[10px]'>
               <div className='tw-h-[60px] tw-w-[60px] tw-bg-green tw-rounded-[8px]'></div>
               <p className='tw-text-gray'>green · #5ee6ae</p>
