@@ -6,6 +6,11 @@ export default gql`
       id
       title
       content
+      createdAt
+      author {
+        username
+        createdAt
+      }
     }
   }
 `;

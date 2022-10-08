@@ -26,6 +26,14 @@ export const PostsList: FC = () => {
     );
   }
 
+  if (data.posts.length === 0) {
+    return (
+      <main>
+        <h3 className='dark:tw-text-white tw-m-auto tw-w-[max-content]'>no posts :(</h3>
+      </main>
+    );
+  }
+
   return (
     <main className='tw-grid tw-gap-[8px]'>
       {data.posts.map((post: PostProps) => (
