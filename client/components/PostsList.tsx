@@ -23,9 +23,9 @@ export const PostsList: FC = () => {
   }
 
   return (
-    <div className='tw-grid tw-gap-[10px]'>
+    <div className='tw-grid tw-gap-[8px]'>
       {data.posts.map((post: PostProps) => (
-        <Post {...post} />
+        <Post {...post} key={post.id} />
       ))}
     </div>
   );
