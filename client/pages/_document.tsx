@@ -6,11 +6,11 @@ const TsuquilHtml: TsuquilHtml = Html;
 
 const Document: NextPage = () => {
   return (
-    <TsuquilHtml lang="en" tsuquil="🌊🍃">
+    <TsuquilHtml lang='en' tsuquil='🌊🍃' className='tw-dark'>
       <Head>
-        <link rel="icon" type="image" href="logo-round.min.svg" />
+        <link rel='icon' type='image' href='logo-round.min.svg' />
       </Head>
-      <body dir="ltr">
+      <body dir='ltr' className='dark:tw-bg-vapor-100'>
         <Main />
         <NextScript />
       </body>

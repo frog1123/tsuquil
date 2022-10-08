@@ -3,8 +3,17 @@
 module.exports = {
   prefix: 'tw-',
   content: ['./pages/**/*.tsx', './components/**/*.tsx'],
+  darkMode: 'class',
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        vapor: {
+          100: '#0b1014'
+        },
+        white: '#ffffff',
+        gray: '#878787'
+      }
+    }
   },
   plugins: []
 };
