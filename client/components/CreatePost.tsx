@@ -28,7 +28,7 @@ export const CreatePost: FC = () => {
   };
 
   return (
-    <div className='tw-w-[100%] dark:tw-bg-vapor-200 tw-rounded-[10px] tw-px-[10px]'>
+    <div className='tw-w-[100%] dark:tw-bg-vapor-200 md:tw-rounded-[10px] tw-px-[10px]'>
       <div className='tw-grid tw-grid-flow-row tw-gap-[6px] tw-w-[100%] tw-m-auto tw-my-[10px]'>
         <h4 className='dark:tw-text-white'>share something...</h4>
         <TextareaAutosize
