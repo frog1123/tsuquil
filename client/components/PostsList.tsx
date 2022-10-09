@@ -35,7 +35,7 @@ export const PostsList: FC = () => {
   }
 
   return (
-    <main className='tw-grid tw-gap-[8px]'>
+    <main className='tw-grid tw-gap-[4px] md:tw-gap-[8px]'>
       {data.posts.map((post: PostProps) => (
         <Post {...post} key={post.id} />
       ))}
