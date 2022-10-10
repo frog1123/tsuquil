@@ -11,6 +11,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+* {
+  transition: 250ms;
+}
+
 #__next {
   height: 100vh;
 }
@@ -66,15 +70,18 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #090d10;
+  margin-top: 3px;
+  background: #070a0c;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 8px;
+  border-right: 3px solid #070a0c;
+  border-left: 3px solid #070a0c;
+  border-radius: 9999px;
   background: linear-gradient(to top, #6aed80 0%, #3878d8 100%);
   background: -webkit-linear-gradient(to top, #6aed80 0%, #3878d8 100%);
   background: -moz-linear-gradient(to top, #6aed80 0%, #3878d8 100%);

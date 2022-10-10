@@ -1,0 +1,8 @@
+.logo-text:hover {
+  background: linear-gradient(to right, #6aed80, #3878d8 100%);
+  background: -webkit-linear-gradient(to right, #6aed80 0%, #3878d8 100%);
+  background: -moz-linear-gradient(to right, #6aed80 0%, #3878d8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
