@@ -25,6 +25,26 @@ export default {
       });
 
       return postsWithAuthors;
+    },
+    post: async (_: any, { id }: { id: string }) => {
+      const post = await prisma.post.findUnique({
+        where: {
+          id
+        }
+      });
+
+      if (!post) throw new Error('post not found');
+
+      const postAuthor = await prisma.user.findUnique({
+        where: {
+          id: post.authorId
+        }
+      });
+
+      return {
+        ...post,
+        author: postAuthor
+      };
     }
   },
   Mutation: {
