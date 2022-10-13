@@ -1,0 +1,32 @@
+<svg viewBox="0 0 13000 3364.7" xmlns="http://www.w3.org/2000/svg">
+  <!-- <rect width="13000" height="3364.7" /> -->
+  <defs>
+    <radialGradient id="0" cx="217.76" cy="3290.99" r="4271.92" gradientUnits="userSpaceOnUse">
+      <stop offset=".09" stop-color="#6aed80"/>
+      <stop offset=".78" stop-color="#3878d8"/>
+    </radialGradient>
+    <radialGradient id="1" cx="2330.61" cy="3182.95" r="3759.33" gradientUnits="userSpaceOnUse">
+      <stop offset=".64" stop-color="#53e0db" stop-opacity="0"/>
+      <stop offset="1" stop-color="#53e0db"/>
+    </radialGradient>
+    <style type="text/css">
+      .tsuquil {
+        font: bold 2600px sans-serif;
+        fill: white;
+      }
+    </style>
+  </defs>
+  <!-- bg -->
+  <rect rx="600" ry="600" width="3364.7" height="3364.7" fill="url(#0)"/>
+  <rect rx="600" ry="600" width="3364.7" height="3364.7" fill="url(#1)"/>
+
+  <!-- cloud -->
+  <g transform="translate(350 300) scale(110)">
+    <path d="M6.34141 6C7.16508 3.66962 9.38756 2 12 2C15.3137 2 18 4.68629 18 8C20.2091 8 22 9.79086 22 12C22 14.2091 20.2091 16 18 16H7C4.23858 16 2 13.7614 2 11C2 8.46898 3.8806 6.37721 6.32069 6.04576" stroke="#ffffff" fill-opacity="0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M7 20L6 22" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 20L11 22" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M17 20L16 22" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="4000" y="2600" width="1000" height="1000" class="tsuquil" font-family="Pacifico">tsuquil</text>
+</svg>

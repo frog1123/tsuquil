@@ -20,7 +20,8 @@ module.exports = {
             moduleLoader.options.modules.getLocalIdent = (context, _, exportName) =>
               loaderUtils
                 .getHashDigest(Buffer.from(`filePath:${path.relative(context.rootContext, context.resourcePath).replace(/\\+/g, '/')}#className:${exportName}`), 'md4', 'base64')
-                .replace(/^(-?\d|--)/, '_$1');
+                .replace(/^(-?\d|--)/, '_$1')
+                .replace(/=/g, '');
         });
       });
 
