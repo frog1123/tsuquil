@@ -20,7 +20,7 @@ import gql_user from './graphql/resolvers/user';
 
 const color = gradient(['#53e0db', '#6aed80']);
 const devOrigins = ['http://localhost:3000', 'https://studio.apollographql.com'];
-const prodOrigins = ['https://tsuquil.cloud/', 'https://staging.tsuquil.cloud/'];
+const prodOrigins = ['https://tsuquil.cloud', 'https://staging.tsuquil.cloud'];
 
 (async () => {
   const app = express();
