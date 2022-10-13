@@ -37,7 +37,7 @@ const color = gradient(['#53e0db', '#6aed80']);
     app,
     cors: {
       credentials: true,
-      origin: ['http://localhost:3000', 'https://studio.apollographql.com']
+      origin: ['http://localhost:3000', 'https://studio.apollographql.com', 'https://tsuquil.cloud/', 'https://staging.tsuquil.cloud/']
     }
   });
 

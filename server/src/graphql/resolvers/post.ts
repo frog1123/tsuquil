@@ -57,7 +57,7 @@ export default {
           data: {
             title,
             content,
-            authorId: '6342010e8e8d983def26ef72'
+            authorId: '6342010e8e8d983def26ef72' // TODO: change later when add users
           }
         })
         .catch(err => {
