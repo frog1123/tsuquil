@@ -32,12 +32,15 @@ const color = gradient(['#53e0db', '#6aed80']);
     context: ({ req, res }: { req: req; res: res }) => ({ req, res })
   });
 
+  const devOrigins = ['http://localhost:3000', 'https://studio.apollographql.com'];
+  const prodOrigins = ['https://tsuquil.cloud/', 'https://staging.tsuquil.cloud/'];
+
   await server.start();
   server.applyMiddleware({
     app,
     cors: {
       credentials: true,
-      origin: ['http://localhost:3000', 'https://studio.apollographql.com', 'https://tsuquil.cloud/', 'https://staging.tsuquil.cloud/']
+      origin: process.env.NODE_ENV === 'production' ? prodOrigins : devOrigins
     }
   });
 
