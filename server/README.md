@@ -4,4 +4,8 @@ env variables
 
 - DATABASE_URL
 
-deploy heroku `git subtree push --prefix server heroku master`
+deploy heroku
+
+```console
+git subtree push --prefix server heroku master
+```
