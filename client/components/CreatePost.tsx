@@ -22,7 +22,6 @@ export const CreatePost: FC = () => {
 
     if (getPostInput().title.length === 0) {
       setCanSubmit(false);
-      console.log(getPostInput().title.length, canSubmit);
       return;
     }
     if (getPostInput().title.length >= 100) {
