@@ -31,7 +31,8 @@ const prodOrigins = ['https://tsuquil.cloud', 'https://staging.tsuquil.cloud'];
   const server = new ApolloServer({
     typeDefs: schema,
     resolvers: [gql_post, gql_user],
-    context: ({ req, res }: { req: req; res: res }) => ({ req, res })
+    context: ({ req, res }: { req: req; res: res }) => ({ req, res }),
+    cache: 'bounded'
   });
 
   await server.start();
