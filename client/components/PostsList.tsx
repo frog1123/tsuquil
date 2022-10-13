@@ -7,6 +7,7 @@ import squares_loading from '@public/squares-loading.svg';
 
 export const PostsList: FC = () => {
   const { error, loading, data } = useQuery(postsQuery, { variables: { newest: true } });
+  console.log(data);
 
   if (loading || typeof data === 'undefined') {
     return (

@@ -4,11 +4,8 @@ import { CreatePost } from '@components/CreatePost';
 import Head from 'next/head';
 import { Navbar } from '@components/Navbar';
 import { FollowingList } from '@components/FollowingList';
-import { useEffect } from 'react';
 
 const Home: NextPage = () => {
-  useEffect(() => console.log(process.env.NODE_ENV));
-
   return (
     <>
       <Head>
