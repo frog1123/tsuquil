@@ -19,10 +19,12 @@ import gql_post from './graphql/resolvers/post';
 import gql_user from './graphql/resolvers/user';
 
 const color = gradient(['#53e0db', '#6aed80']);
+const devOrigins = ['http://localhost:3000', 'https://studio.apollographql.com'];
+const prodOrigins = ['https://tsuquil.cloud/', 'https://staging.tsuquil.cloud/'];
 
 (async () => {
   const app = express();
-  app.use(cors({ credentials: true, origin: ['http://localhost:3000', 'https://studio.apollographql.com'] }));
+  app.use(cors({ credentials: true, origin: process.env.NODE_ENV === 'production' ? prodOrigins : devOrigins }));
   app.use('/rest', rest_hello);
 
   const schema = loadSchemaSync(join('src', 'graphql', 'schemas', '*.gql'), { loaders: [new GraphQLFileLoader()] });
@@ -31,9 +33,6 @@ const color = gradient(['#53e0db', '#6aed80']);
     resolvers: [gql_post, gql_user],
     context: ({ req, res }: { req: req; res: res }) => ({ req, res })
   });
-
-  const devOrigins = ['http://localhost:3000', 'https://studio.apollographql.com'];
-  const prodOrigins = ['https://tsuquil.cloud/', 'https://staging.tsuquil.cloud/'];
 
   await server.start();
   server.applyMiddleware({
