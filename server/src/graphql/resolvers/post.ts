@@ -24,6 +24,8 @@ export default {
         };
       });
 
+      console.log(postsWithAuthors);
+
       return postsWithAuthors;
     },
     post: async (_: any, { id }: { id: string }) => {
