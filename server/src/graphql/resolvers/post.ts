@@ -24,7 +24,7 @@ export default {
         };
       });
 
-      console.log(postsWithAuthors);
+      console.log(posts);
 
       return postsWithAuthors;
     },
