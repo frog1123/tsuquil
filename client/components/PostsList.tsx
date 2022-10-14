@@ -1,12 +1,41 @@
-import type { FC } from 'react';
+import { FC, useContext, useEffect, useRef, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import postsQuery from '@graphql/queries/posts';
 import { Post, PostProps } from '@components/Post';
 import Image from 'next/image';
 import squares_loading from '@public/squares-loading.svg';
+import UserContext from 'UserContext';
 
 export const PostsList: FC = () => {
-  const { error, loading, data } = useQuery(postsQuery, { variables: { newest: true } });
+  const [limit] = useState(4);
+  const offset = useRef(0);
+  const { value, setValue } = useContext(UserContext);
+  const { error, loading, data, refetch, fetchMore } = useQuery(postsQuery, { variables: { newest: true, limit, offset: 0 }, fetchPolicy: 'cache-and-network' });
+
+  const fetchMorePosts = () => {
+    return fetchMore({
+      variables: {
+        limit,
+        offset: offset.current + limit
+      },
+      updateQuery: (prev, { fetchMoreResult }: any) => {
+        if (!fetchMoreResult) return prev;
+        if (fetchMoreResult.posts.length !== 0) offset.current = offset.current + limit;
+        return Object.assign({}, prev, {
+          posts: [...prev.posts, ...fetchMoreResult.posts]
+        });
+      }
+    });
+  };
+
+  if (value.reloadPostsList) refetch({ offset: 0 }).then(() => setValue({ reloadPostsList: false }));
+
+  if (typeof window !== 'undefined') {
+    window.onscroll = () => {
+      const bottom = Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight;
+      if (bottom) fetchMorePosts();
+    };
+  }
 
   if (loading || typeof data === 'undefined') {
     return (

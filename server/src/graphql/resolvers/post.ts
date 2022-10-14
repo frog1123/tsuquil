@@ -3,12 +3,14 @@ import { prisma } from '../../index';
 
 export default {
   Query: {
-    posts: async (_: any, { newest }: { newest: boolean }) => {
+    posts: async (_: any, { newest, offset, limit }: { newest: boolean; offset: number; limit: number }) => {
       let posts: Post[];
       posts = await prisma.post.findMany({
         orderBy: {
           createdAt: newest ? 'desc' : 'asc' // descending or ascending order
-        }
+        },
+        skip: offset,
+        take: limit
       });
 
       const postsWithAuthors = posts.map(async (post: Post) => {

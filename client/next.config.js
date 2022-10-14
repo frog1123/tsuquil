@@ -5,7 +5,7 @@ const loaderUtils = require('loader-utils');
 const MangleCssClassPlugin = require('mangle-css-class-webpack-plugin');
 
 module.exports = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]

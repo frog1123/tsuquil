@@ -1,8 +1,10 @@
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import createPostMutation from '@graphql/mutations/createPost';
 import { useMutation } from '@apollo/client';
 import { AccentedButton } from './AccentedButton';
+import UserContext from 'UserContext';
+import { valueFromAST } from 'graphql';
 
 export const CreatePost: FC = () => {
   let title: string | undefined, content: string | undefined;
@@ -36,10 +38,11 @@ export const CreatePost: FC = () => {
     setCanSubmit(true);
   };
 
+  const { value, setValue } = useContext(UserContext);
   const submitPost = () => {
     if (!canSubmit) return;
 
-    _submitPost({ variables: { title: getPostInput()?.title, content: getPostInput()?.content } });
+    _submitPost({ variables: { title: getPostInput()?.title, content: getPostInput()?.content } }).then(() => setValue({ ...value, reloadPostsList: true }));
 
     if (typeof window !== 'undefined') {
       (document.getElementById('title') as HTMLInputElement).value = '';
