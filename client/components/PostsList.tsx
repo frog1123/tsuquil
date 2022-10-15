@@ -7,7 +7,7 @@ import squares_loading from '@public/squares-loading.svg';
 import UserContext from 'UserContext';
 
 export const PostsList: FC = () => {
-  const limit = useRef(10);
+  const limit = useRef(2);
   const [offset, setOffset] = useState(0);
   const { value, setValue } = useContext(UserContext);
   const { error, loading, data, refetch, fetchMore } = useQuery(postsQuery, { variables: { newest: true, limit: limit.current, offset: 0 }, fetchPolicy: 'cache-and-network' });
