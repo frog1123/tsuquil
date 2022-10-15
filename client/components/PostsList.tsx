@@ -1,4 +1,4 @@
-import { FC, useContext, useRef, useState } from 'react';
+import { FC, useContext, useRef } from 'react';
 import { useQuery } from '@apollo/client';
 import postsQuery from '@graphql/queries/posts';
 import { Post, PostProps } from '@components/Post';
@@ -7,8 +7,8 @@ import squares_loading from '@public/squares-loading.svg';
 import UserContext from 'UserContext';
 
 export const PostsList: FC = () => {
-  const limit = useRef(2);
-  const [offset, setOffset] = useState(0);
+  const limit = useRef(10);
+  const offset = useRef(0);
   const { value, setValue } = useContext(UserContext);
   const { error, loading, data, refetch, fetchMore } = useQuery(postsQuery, { variables: { newest: true, limit: limit.current, offset: 0 }, fetchPolicy: 'cache-and-network' });
 
@@ -19,11 +19,11 @@ export const PostsList: FC = () => {
     return fetchMore({
       variables: {
         limit: limit.current,
-        offset: offset + limit.current
+        offset: offset.current + limit.current
       },
       updateQuery: (prev, { fetchMoreResult }: any) => {
         if (!fetchMoreResult) return prev;
-        if (fetchMoreResult.posts.length !== 0) setOffset(offset + limit.current);
+        if (fetchMoreResult.posts.length !== 0) offset.current = offset.current + limit.current;
         return Object.assign({}, prev, {
           posts: [...prev.posts, ...fetchMoreResult.posts]
         });
