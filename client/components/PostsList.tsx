@@ -66,8 +66,8 @@ export const PostsList: FC = () => {
 
   return (
     <main className='tw-grid tw-gap-[4px] md:tw-gap-[8px]'>
-      {data.posts.map((post: PostProps) => (
-        <Post {...post} key={post.id} />
+      {data.posts.map((post: PostProps, index: number) => (
+        <Post {...post} key={index} />
       ))}
       <div id='incremental-load' className='tw-hidden tw-w-[100%] tw-h-[40px]'>
         <div className='tw-w-[40px] tw-h-[40px] tw-m-auto'>
