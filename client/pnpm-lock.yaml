@@ -5,6 +5,7 @@ specifiers:
   '@types/node': 18.8.3
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
+  '@types/react-infinite-scroller': ^1.2.3
   autoprefixer: ^10.4.12
   eslint: 8.24.0
   eslint-config-next: 12.3.1
@@ -15,6 +16,7 @@ specifiers:
   postcss: ^8.4.17
   react: 18.2.0
   react-dom: 18.2.0
+  react-infinite-scroller: ^1.2.6
   react-textarea-autosize: ^8.3.4
   sass: ^1.55.0
   tailwindcss: ^3.1.8
@@ -22,12 +24,14 @@ specifiers:
 
 dependencies:
   '@apollo/client': 3.7.0_gdcq4dv6opitr3wbfwyjmanyra
+  '@types/react-infinite-scroller': 1.2.3
   graphql: 16.6.0
   loader-utils: 3.2.0
   mangle-css-class-webpack-plugin: 5.0.8
   next: 12.3.1_2mygebwfgdyopr3fy2qddu2eli
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-infinite-scroller: 1.2.6_react@18.2.0
   react-textarea-autosize: 8.3.4_iapumuv4e6jcjznwuxpf4tt22e
 
 devDependencies:
@@ -317,6 +321,12 @@ packages:
     dependencies:
       '@types/react': 18.0.21
     dev: true
+
+  /@types/react-infinite-scroller/1.2.3:
+    resolution: {integrity: sha512-l60JckVoO+dxmKW2eEG7jbliEpITsTJvRPTe97GazjF5+ylagAuyYdXl8YY9DQsTP9QjhqGKZROknzgscGJy0A==}
+    dependencies:
+      '@types/react': 18.0.21
+    dev: false
 
   /@types/react/18.0.21:
     resolution: {integrity: sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA==}
@@ -1924,6 +1934,15 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-infinite-scroller/1.2.6_react@18.2.0:
+    resolution: {integrity: sha512-mGdMyOD00YArJ1S1F3TVU9y4fGSfVVl6p5gh/Vt4u99CJOptfVu/q5V/Wlle72TMgYlBwIhbxK5wF0C/R33PXQ==}
+    peerDependencies:
+      react: ^0.14.9 || ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

@@ -1,5 +1,5 @@
 type Query {
-  posts(newest: Boolean!): [Post]!
+  posts(newest: Boolean!, offset: Int!, limit: Int!): [Post]!
   post(id: ID!): Post!
   user(id: ID!): User!
 }

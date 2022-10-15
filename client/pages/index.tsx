@@ -4,7 +4,6 @@ import { CreatePost } from '@components/CreatePost';
 import Head from 'next/head';
 import { Navbar } from '@components/Navbar';
 import { FollowingList } from '@components/FollowingList';
-
 const Home: NextPage = () => {
   return (
     <>
