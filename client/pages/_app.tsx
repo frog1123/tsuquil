@@ -7,7 +7,8 @@ import { useState } from 'react';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [value, setValue] = useState({
-    reloadPostsList: false
+    reloadPostsList: false,
+    setPermPosts: false
   });
 
   return (
