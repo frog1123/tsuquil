@@ -8,7 +8,7 @@ const Document: NextPage = () => {
   return (
     <TsuquilHtml lang='en' tsuquil='🌊🍃' className='tw-dark'>
       <Head>
-        <link rel='icon' type='image' href='logo-round.min.svg' />
+        <link rel='icon' type='image' href='/logo-round.min.svg' />
       </Head>
       <body dir='ltr' className='dark:tw-bg-vapor-300'>
         <Main />

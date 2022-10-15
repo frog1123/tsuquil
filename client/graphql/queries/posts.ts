@@ -8,6 +8,7 @@ export default gql`
       content
       createdAt
       author {
+        id
         username
         createdAt
       }

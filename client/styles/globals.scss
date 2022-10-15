@@ -19,6 +19,16 @@ body {
   height: 100vh;
 }
 
+.progress {
+  background-image: linear-gradient(to right, #5ee6ae 0%, #17827e 100%) !important;
+  background-image: -webkit-linear-gradient(to right, #5ee6ae 0%, #17827e 100%) !important;
+  background-image: -moz-linear-gradient(to right, #5ee6ae 0%, #17827e 100%) !important;
+
+  & .glow {
+    display: none !important;
+  }
+}
+
 h1 {
   font-size: 56px;
 }

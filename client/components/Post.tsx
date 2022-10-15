@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { FC } from 'react';
 import { formatTime } from '@utils/formatTime';
 import Link from 'next/link';
 
@@ -8,6 +8,7 @@ export interface PostProps {
   content?: string;
   createdAt: string;
   author: {
+    id: string;
     username: string;
     createdAt: string;
   };
